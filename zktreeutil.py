@@ -155,7 +155,9 @@ class ZkTreeUtil(object):
 		"""
 		print('ZNode path: %s' % znode.path)
 		print('ZNode stat: %s' % str(znode.stat))
-		if len(znode.data) == 0:
+		if znode.data is None:
+			print('ZNode data: (null)\n')
+		elif len(znode.data) == 0:
 			print('ZNode data: (empty)\n')
 		else:	
 			print('ZNode data: %s\n' % znode.data)
